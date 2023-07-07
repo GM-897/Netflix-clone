@@ -1,0 +1,248 @@
+$bg: rgb(16, 16, 16);
+.banner {
+  height: 800px;
+  background-color: $bg;
+  background-size:cover;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 3rem;
+  box-sizing: border-box;
+  object-fit: contain;
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    background: $bg;
+    opacity: 0.4;
+  }
+  h1,//banner title and description
+  p {
+    color: white;
+    font-size: 3rem;
+    // width: 40%;
+    max-width: 480px;
+    z-index: 10;
+    padding-bottom: 2rem;
+  }
+  p {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    word-spacing: 3px;
+    font-weight: 800;
+  }
+
+  > div {
+    display: flex;
+
+    button {
+      padding: 1rem;
+      width: 150px;
+      outline: none;
+      border: none;
+      z-index: 10;
+      border-radius: 5px;
+      margin: 1rem;
+      cursor: pointer;
+      font-size: 1.2rem;
+      display: flex;//images or content will be aligned side by side
+      align-items: center;
+      justify-content: center;
+      transition: all 0.5s;
+
+      &:hover {
+        opacity: 0.6;
+      }
+
+      svg {
+        font-size: 1.7rem;
+        margin: 0 10px;
+      }
+    }
+  }
+}
+
+.banner__fadeBottom {
+  height: 0.9rem;
+  background-image: linear-gradient(
+    180deg,
+    transparent,
+    rgba(37, 37, 37, 0.61),
+    #111
+  );
+}
+
+
+.row {
+  background-color: $bg;
+  padding: 1rem;
+
+  > h2 {
+    margin: 0.3rem;
+    font-weight: 400;
+  }
+
+  > div {
+    display: flex;
+    overflow-x: auto; // agr yeh part image se badha hoga toh scroller ajyega iske liye...page nhi fatega
+  
+  }
+}
+
+.card {
+  width: 180px;
+  // height: 130px;
+  margin: 0.3rem;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: transform 0.5s;
+  &:hover {
+    transform: translateY(-20px);
+  }
+}
+
+.genreBox {
+  overflow-x: auto;
+  display: flex;
+  height: 100px;
+  background-color: $bg;
+  flex: 0%;
+  > a {
+    color: black;
+    background-color: rgb(167, 165, 165);
+    padding: 1rem 0;
+    text-align: center;
+    border-radius: 5px;
+    transition: all 0.5s;
+    min-width: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;//jo written part h uske andar uske liye h
+    margin: 1rem;
+    &:hover {
+      background-color: rgb(236, 236, 236);
+      transform: translate(-5px);
+    }
+  }
+}
+
+
+
+
+@media (max-width:794px){
+  .banner{
+    height: 500px;
+    h1,
+  p {
+    color: white;
+    font-size: 4rem;
+    width: 50%;
+  }
+  p {
+    display: none;
+  }
+    > div {
+      display:inline;
+      >button{
+        &:nth-child(odd) {
+          background-color: white;
+          color: black;
+        }
+        &:nth-child(even) {
+          background-color: white;
+          color: black;
+        }
+      }
+
+    }
+  }
+  .genreBox {
+    > a {
+      color: black;
+      background-color: white;
+      padding: 0.5rem 0;
+      text-align: center;
+      min-width: 7rem;
+    }
+  }
+  
+  .row {
+  
+    > h2 {
+      margin: 0.4rem;// 0.3 se 0.4 kr diya 
+    }
+  }
+
+  .card {
+    width: 130px;
+    margin: 0.3rem;
+    cursor: pointer;
+    transition: transform 0.5s;
+  }
+}
+
+@media(max-width:400px){
+  .banner{
+    height:200px;
+    margin-top: 80px;
+    h1{
+      color: white;
+      font-size: 1.5rem;
+      width: 60%;
+      margin-top: 40px;
+    }
+    p{
+      display: none;
+    }
+    > div {
+      display: flex;
+  
+      button {
+        padding: 0.5rem;
+        width: 100px;
+        margin-bottom: 1rem;
+        font-size: 0.8rem;
+        display: inline;//images or content will be aligned side by side
+        // align-items:center;
+        // justify-content:left;
+  
+        svg {
+          font-size: 0.9rem;
+          margin: 0 6px;
+        }
+      }
+    }
+  }
+  .card {
+    width: 100px;
+    margin: 0.2rem;
+  }
+  .row {
+  
+    > h2 {
+      margin: 0.1rem;
+    }
+  }
+
+  .genreBox {
+    overflow-x: auto;
+    height: 60px;
+    flex: 0%;
+    > a {
+      color: black;
+      background-color: rgb(167, 165, 165);
+      min-width: 6rem;
+      display: flex;
+      align-items: center;
+      margin: 0.5rem;
+    }
+  }
+  
+
+}
