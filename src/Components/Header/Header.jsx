@@ -75,7 +75,7 @@ const Header = () => {
             </button>
             <input
               type="text"
-              placeholder="Search"
+              placeholder="Titles , people , genre"
               onMouseEnter={() => setInputHover(true)}
               onMouseLeave={() => setInputHover(false)}
               onBlur={() => {
@@ -85,8 +85,8 @@ const Header = () => {
             />
           </div>
               </div>
-         
             <BsBellFill  className='bell'/>
+         
 
             <div className='menu-container' ref={menuRef}>
             <div className='menu-trigger' onMouseEnter={()=>{setOpen(!open)}}>
@@ -103,7 +103,6 @@ const Header = () => {
 
         </div>
         </div>
-        {/* <BsCaretDownFill className='down' /> */}
 
         </nav>
     )
@@ -112,10 +111,10 @@ function DropdownItem(props){
     return(
       <li className = 'dropdownItem'>
         <img src={props.img} alt="show" />
-        <a> {props.text} </a>
+        <a href='/'> {props.text} </a>
       </li>
     );
-  }
-  
+  };
+
 
 export default Header

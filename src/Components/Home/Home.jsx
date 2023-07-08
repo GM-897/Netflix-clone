@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "./Home.scss";
-// import requests from "../../request";
 import axios from "axios";// in layman terms better verrsion of fetch API(reduces lines of code)
 import { Link } from "react-router-dom";
 import { BiPlay } from "react-icons/bi"
@@ -87,29 +86,8 @@ const Home = () => {
     }
 
 
-    // const [movie, setMovies] = useState([])
-    // const handleMovie = async (movie) => {
-    //     const {
-    //         data: { movies },
-    //     } = await axios.get(`${url}/genre/movie/movie_id/videos?api_key=${apiKey}`);
-    //     setGenre(movies);
-    //     console.log(movies);
-    // };
-
-    // const handleMovie = (movies) => {
-    //     if(trailerUrl){
-    //         setTrailerUrl("");
-    //     } else {
-    //         movieTrailer(movies?.name || "")
-    //         .then((url) => {
-    //             const urlParams = new URLSearchParams(new URL(url).search);
-    //             setTrailerUrl(urlParams.get('v'));
-    //         })
-    //         .catch(() => console.log('Temporary Unavailable'))
-    //     }
-    // }
-    
     var x=Math.floor(Math.random() * 20);
+
     return (
         <section className="home">
             <div
@@ -126,10 +104,10 @@ const Home = () => {
                 {popularMovies[x] && <p>{truncate(popularMovies[x].overview,150)}</p>}
 
                 <div>
-                    {/* <button className = "banner__button"><a href={`https://www.youtube.com/results?search_query=${popularMovies[x].original_title}`}><BiPlay />Play</a></button> */}
                     <button className = "banner__button"><BiPlay />Play</button>
 
                     <button className = "banner__button"><AiOutlinePlus />My List</button>
+
                 </div>
             </div>
             <div className="banner__fadeBottom"></div>
@@ -142,7 +120,6 @@ const Home = () => {
                     </Link>
                 ))}
             </div>
-            {/* <Row key={nowPlayingMovies.id} arr={nowPlayingMovies} /> */}
             <Row key={nowPlayingMovies.id} arr={nowPlayingMovies} />
 
 

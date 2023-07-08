@@ -41,7 +41,7 @@ $bg: rgb(16, 16, 16);
   > div {
     display: flex;
 
-    button {
+    .banner__button {
       padding: 1rem;
       width: 150px;
       outline: none;
@@ -55,16 +55,21 @@ $bg: rgb(16, 16, 16);
       align-items: center;
       justify-content: center;
       transition: all 0.5s;
-
       &:hover {
         opacity: 0.6;
       }
+ 
 
       svg {
         font-size: 1.7rem;
         margin: 0 10px;
       }
     }
+    .info{
+      // display: inline-block;
+      text-align: right;
+    }
+
   }
 }
 
