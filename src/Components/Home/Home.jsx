@@ -6,7 +6,6 @@ import { BiPlay } from "react-icons/bi"
 import { AiOutlinePlus } from "react-icons/ai"
 
 
-
 const apiKey = "0de574b04919bbe45d0248bd6bb324ab";
 const url = "https://api.themoviedb.org/3";
 const imgUrl = "https://image.tmdb.org/t/p/original";
@@ -84,9 +83,16 @@ const Home = () => {
     function truncate(str, n){
         return str?.length > n ? str.substr(0, n-1) + "..." : str;
     }
-
-
+    
     var x=Math.floor(Math.random() * 20);
+    
+    const [isOpen,setIsOpen]=useState(false);
+
+    const BUTTON_WRAPPER_STYLES = {
+        position: 'relative',
+        zIndex: 1
+      }
+      
 
     return (
         <section className="home">
@@ -108,9 +114,10 @@ const Home = () => {
 
                     <button className = "banner__button"><AiOutlinePlus />My List</button>
 
+
                 </div>
             </div>
-            <div className="banner__fadeBottom"></div>
+            {/* <div className="banner__fadeBottom"></div> */}
 
             <Row title={"Upcoming"} arr={upcomingMovies} />
             <div className="genreBox">

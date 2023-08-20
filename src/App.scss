@@ -117,6 +117,7 @@ body{
 
   > img {
     height: 200%;
+    cursor: pointer;
   }
 
   > div {
@@ -144,8 +145,8 @@ body{
   //   }
   // }
 }
-// drop down menu for profile
 
+// drop down menu for profile
 .menu-trigger img{
   position:fixed;
   right: 80px;
@@ -237,33 +238,21 @@ body{
 }
 
 
-
-
-// @media (max-width:794px){
+// @media (max-width : 644px){
 //   .header{
 //     >div{
 //       >a{
 //         font-size: 1rem;
-//         margin: 2vmax;
+//         margin: 1.5vmax;
 //       }
 //     }
+//     >svg{
+//       color: white;
+//       font-size: 1rem;
+//     }
+
 //   }
 // }
-
-@media (max-width : 644px){
-  .header{
-    >div{
-      >a{
-        font-size: 1rem;
-        margin: 1.5vmax;
-      }
-    }
-    >svg{
-      color: white;
-      font-size: 1rem;
-    }
-  }
-}
 
 @media (max-width :400px){
   .header {
@@ -296,19 +285,20 @@ body{
       font-size: 3rem;
       color: white;
     }
-    // .profile{
-    //   height: 70%;
-    //   margin-right: 10px;
-    // }
+    .profile{
+      visibility: hidden;
+    }
     .down{
       width:auto
 
     }
     .bell{
+      // visibility: hidden;
       margin-right: -98px;
       margin-left: 12px;
       padding: 3px;
-      height: 45%;
+      height: 115%;
+      width: 30%;
     
     }
     .menu-trigger img{
